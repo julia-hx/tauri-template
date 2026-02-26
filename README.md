@@ -1,6 +1,6 @@
-# Tauri + SvelteKit
+# Tauri + SvelteKit + Tailwind Template
 
-This template should help get you started developing with Tauri and SvelteKit in Vite.
+This template extends the auto-generated Tauri/Sveltekit template to include Tailwind CSS and Icons, and UI Mode toggle for dark/light mode.
 
 ## Recommended IDE Setup
 
