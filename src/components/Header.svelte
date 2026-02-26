@@ -19,7 +19,7 @@
 </script>
 
 <div class="flex mt-2 justify-center">
-	<nav class="mr-2">
+	<nav class="mr-2 mt-0.5">
 		<a href="/">home</a>
 		<a href="/about">about</a>
 	</nav>
