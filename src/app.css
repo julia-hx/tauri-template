@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root{
+	font-family: theme(--font-mono);
+	font-size: theme(--text-lg);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+button, input {
+	border-radius: 8px;
+	padding: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+button {
+	background-color: theme(--color-violet-500);
+}
+button:hover {
+	background-color: theme(--color-violet-600);
+	cursor: pointer;
+}
+input {
+	background-color: theme(--color-gray-200);
+	color: theme(--color-gray-800);
+}
+
+a {
+	color: theme(--color-violet-500);
+}
+a:hover {
+	text-decoration: underline;
+}
