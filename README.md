@@ -12,6 +12,7 @@ Uses yarn to build and run.
 ## To get started
 
 ```yarn```
+
 ```yarn tauri dev```
 
 Most font / color styling can be edited in /src/app.css.
