@@ -2,7 +2,6 @@
 	import { Icon, Sun, Moon } from "svelte-hero-icons";
 	import { uiMode } from "../globals.svelte.js";
 
-	//export const uiMode = $state({ isDarkMode : true });
 	/** @type {HTMLElement} */
 	let moonIcon;
 	/** @type {HTMLElement} */
