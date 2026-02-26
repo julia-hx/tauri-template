@@ -1,6 +1,7 @@
 # Tauri + SvelteKit + Tailwind Template
 
 This template extends the auto-generated Tauri/Sveltekit template to include Tailwind CSS and Icons, and UI Mode toggle for dark/light mode.
+Uses yarn to build and run.
 
 ## Recommended IDE Setup
 
