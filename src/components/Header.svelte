@@ -1,6 +1,6 @@
 <script>
-	import { Icon, Sun, Moon } from "svelte-hero-icons";
-	import { uiMode } from "../globals.svelte.js";
+	import { uiMode, IconType } from "../globals.svelte.js";
+	import Icon from "./Icon.svelte";
 
 	/** @type {HTMLElement} */
 	let moonIcon;
@@ -25,8 +25,14 @@
 	</nav>
 	<button id="uimode-toggle" onclick={toggleDarkMode}>
 		<div id="uimode-icon">
-			<div bind:this={sunIcon}><Icon src={Sun} id="sun" ></Icon></div>
-			<div bind:this={moonIcon}><Icon src={Moon} id="moon"></Icon></div>
+			<div bind:this={sunIcon}>
+				<Icon type={IconType.Sun} offset="-4" size="32"/>
+			</div>
+		</div>
+		<div id="uimode-icon">
+			<div bind:this={moonIcon}>
+				<Icon type={IconType.Moon} offset="-4" size="32"/>
+			</div>
 		</div>
 	</button>
 </div>
@@ -36,12 +42,10 @@
 		border-radius: 20px;
 		width: 24px;
 		height: 24px;
+		padding: 0px;
 	}
 
 	#uimode-icon {
-		width: 18px;
-		height: 18px;
-		margin-left: -5px;
-		margin-top: -1px;
+		margin: 0px;
 	}
 </style>
