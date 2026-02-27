@@ -21,6 +21,19 @@ You can also set the text and background colors for light vs dark mode in /src/+
 From there, you can extend this template to your hearts desire!
 
 
-## Known issues
+## Icons
 
-I included svelte-hero-icon to have a library of icons in the template. When running ```yarn tauri dev``` here is sometimes a Svelte error about invalid declaration of {Icon, Sun, Moon} in Header - this is annoying but can be ignored. Not sure how to get around it atm without disabling the overlay completely.
+A selection of icon svg:s from [hero icons](https://heroicons.com/) is included.
+Import in script:
+```
+import Icon from "./Icon.svelte";
+import { IconType } from "../globals.svelte.js";
+```
+Usage in html:
+```
+<Icon type={IconType.Sparkles}/> 
+```
+... with optional params:
+```
+<Icon type={IconType.Heart} offset="-4" size="32"/> 
+```
