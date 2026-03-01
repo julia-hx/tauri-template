@@ -4,4 +4,6 @@
 	</span>
 	
 	<p class="mt-2">About this app.</p>
+
+	<a class="mt-4" href="./examples">Template usage examples</a>
 </div>

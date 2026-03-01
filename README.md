@@ -47,6 +47,4 @@ Usage in html:
 ```
 ## Settings
 
-A settings page is included.
-
-By default, user can set an accent color for the app.
+A settings page is included. By default it stores the users choice of accent color.

@@ -9,9 +9,3 @@ export async function _initSettings() {
 		setAccentColorByString(stringValue);
 	});
 };
-
-export async function _setAccentColor(color : AccentColor) {
-	accentColor.color = color;
-	let store = new LazyStore('settings.json');
-	store.set("accentColor", getAccentColorAsString());
-}

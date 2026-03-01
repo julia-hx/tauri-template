@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AccentColor } from '../../globals.svelte';
-	import { _setAccentColor } from './+page';
+	import AccentColorPicker from '../../components/AccentColorPicker.svelte';
 </script>
 
 <div class="flex justify-center items-center flex-col">
@@ -16,53 +16,6 @@
 		accent color
 	</div>
 
-	<div class="flex flex-row items-center space-x-2 mt-2">
-		<button 
-			class="accent-color-btn size-6 violet" 
-			title="violet" 
-			onclick={() => { _setAccentColor(AccentColor.Violet); }}>
-		</button>
-		<button
-			class="accent-color-btn size-6 fuchsia" 
-			title="fuchsia" 
-			onclick={() => { _setAccentColor(AccentColor.Fuchsia); }}>
-		</button>
-		<button 
-			class="accent-color-btn size-6 rose" 
-			title="rose" 
-			onclick={() => { _setAccentColor(AccentColor.Rose); }}>
-		</button>
-		<button 
-			class="accent-color-btn size-6 amber" 
-			title="amber" 
-			onclick={() => { _setAccentColor(AccentColor.Amber); }}>
-		</button>
-		<button 
-			class="accent-color-btn size-6 green" 
-			title="green" 
-			onclick={() => { _setAccentColor(AccentColor.Green); }}>
-		</button>
-		<button 
-			class="accent-color-btn size-6 sky" 
-			title="sky" 
-			onclick={() => { _setAccentColor(AccentColor.Sky); }}>
-		</button>
-		<button 
-			class="accent-color-btn size-6 indigo" 
-			title="indigo" 
-			onclick={() => { _setAccentColor(AccentColor.Indigo); }}>
-		</button>
-	</div>
+	<AccentColorPicker/>
+	
 </div>
-
-<style>
-	@import "tailwindcss";
-	@custom-variant dark (&:where(.dark, .dark *));
-
-	.accent-color-btn {
-		border-radius: 20px;
-	}
-	.accent-color-btn:hover {
-		outline: solid;
-	}
-</style>

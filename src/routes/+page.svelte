@@ -4,7 +4,7 @@
 	import { IconType } from "../globals.svelte";
 	import { _initSettings } from "./settings/+page";
 
-	
+
 
 	let message = $state("Hello world!");
 
@@ -24,12 +24,8 @@
 		<p>using Rust backend and web frontend.</p>
 	</div>
 
-	<form class="flex space-x-1.5 mt-2" onsubmit={printTestMessage}>
+	<form class="flex space-x-1.5 mt-4" onsubmit={printTestMessage}>
 		<input bind:value={message}/>
 		<button type="submit">Print</button>
 	</form>
 </div>
-
-<style>
-	@custom-variant dark (&:where(.dark, .dark *));
-</style>
