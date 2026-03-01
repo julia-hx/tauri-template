@@ -3,9 +3,11 @@
 	import { IconType } from "../../globals.svelte";
 	import AccentColorPicker from "../../components/AccentColorPicker.svelte";
 	import FolderPicker from "../../components/FolderPicker.svelte";
+	import FilePicker from "../../components/FilePicker.svelte";
 	import FileDialog from "../../components/FileDialog.svelte";
 
 	let exampleFolderPath = $state({path: "-none-"});
+	let exampleFilePath = $state({path: "-none-"});
 </script>
 
 <div class="flex justify-center items-center flex-col space-y-0">
@@ -68,6 +70,19 @@
 				pathState={exampleFolderPath} 
 				onPathStateChanged={() => {
 					console.log("example folder picker path set.")
+				}}
+			/>
+		</div>
+	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>FilePicker for a single file path:</p>
+		<div class="mt-2s">
+			<FilePicker 
+				label="file picker" 
+				pathState={exampleFilePath} 
+				onPathStateChanged={() => {
+					console.log("example file picker path set.")
 				}}
 			/>
 		</div>

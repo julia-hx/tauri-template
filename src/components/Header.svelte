@@ -1,6 +1,7 @@
 <script>
 	import { uiMode, IconType } from "../globals.svelte.js";
 	import Icon from "./Icon.svelte";
+	import { _storeDarkMode } from "../routes/settings/+page.js";
 
 	/** @type {HTMLElement} */
 	let moonIcon;
@@ -9,6 +10,7 @@
 
 	function toggleDarkMode() {
 		uiMode.isDarkMode = !uiMode.isDarkMode;
+		_storeDarkMode(uiMode.isDarkMode);
 		console.log("mode toggle");
 	}
 

@@ -33,25 +33,25 @@
 .violet {
 	--color-accent: theme(--color-violet-500);
 	--color-accent-heavy: theme(--color-violet-600);
-	--color-accent-light: theme(--color-violet-300);
+	--color-accent-light: theme(--color-violet-400);
 }
 
 .fuchsia {
 	--color-accent: theme(--color-fuchsia-500);
 	--color-accent-heavy: theme(--color-fuchsia-600);
-	--color-accent-light: theme(--color-fuchsia-300);
+	--color-accent-light: theme(--color-fuchsia-400);
 }
 
 .rose {
 	--color-accent: theme(--color-rose-500);
 	--color-accent-heavy: theme(--color-rose-600);
-	--color-accent-light: theme(--color-rose-300);
+	--color-accent-light: theme(--color-rose-400);
 }
 
 .amber {
 	--color-accent: theme(--color-amber-500);
 	--color-accent-heavy: theme(--color-amber-600);
-	--color-accent-light: theme(--color-amber-300);
+	--color-accent-light: theme(--color-amber-400);
 }
 
 .green {
@@ -70,6 +70,12 @@
 	--color-accent: theme(--color-indigo-500);
 	--color-accent-heavy: theme(--color-indigo-600);
 	--color-accent-light: theme(--color-indigo-300);
+}
+
+.gray {				
+	--color-accent: theme(--color-gray-500);
+	--color-accent-heavy: theme(--color-gray-700);
+	--color-accent-light: theme(--color-gray-400);
 }
 
 textarea, input, button, a { outline: 0px; }
@@ -125,4 +131,23 @@ a:hover {
 .no-margins {
 	margin-top: 0px;
 }
-	
+
+.nudge-up-2 {
+	margin-top: -2px;
+}
+.nudge-up-5 {
+	margin-top: -5px;
+}
+.nudge-up-10 {
+	margin-top: -10px;
+}
+
+.pull-up-2 {
+	margin-bottom: -2px;
+}
+.pull-up-5 {
+	margin-bottom: -5px;
+}
+.pull-up-10 {
+	margin-bottom: -10px;
+}

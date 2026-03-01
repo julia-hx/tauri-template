@@ -15,12 +15,11 @@
 	</p>
 
 	<div class="flex flex-col space-y-2 justify-center items-center">
-		<div class="flex flex-row">
-			<AccentColorPicker/>
-			<span class="label">accent color</span>
-		</div>
-
-		<FolderPicker label="default path" pathState={defaultFilePath} onPathStateChanged={() => {
+		<span class="label no-margins pull-up-2">accent color</span>
+		<AccentColorPicker/>
+	
+		<span class="label no-margins pull-up-2">default filepath</span>
+		<FolderPicker label="" pathState={defaultFilePath} onPathStateChanged={() => {
 			_storeDefaultFilepath(defaultFilePath.path);
 		}}/>
 	</div>

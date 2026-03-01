@@ -60,9 +60,7 @@
 		for (let pathResult of data)
 		{
 			let path = new FilePath();
-			path.value = pathResult;
-			let segments = pathResult.split('/');
-			path.displayName = segments[segments.length - 1];
+			path.set(pathResult);
 			paths.push(path);
 		}
 		pathsLoaded = true;
@@ -97,19 +95,21 @@
 	<IconButton iconType={IconType.Document} onClick={selectSourceFile}/>
 	<IconButton iconType={IconType.Folder} onClick={selectSourceFolder}/>
 	<IconButton iconType={IconType.Trash} onClick={reset}/>
+	{#if label.length > 0}
 	<div class="label no-margins">
 		{label}
 	</div>
+	{/if}
 </div>
 
-<div class="min-w-64 max-w-120 min-h-14 max-h-40 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400">
+<div class="min-w-64 max-w-120 min-h-14 max-h-40 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-400">
 	<ul class="overflow-auto text-sm min-w-64 max-w-120 min-h-14 max-h-40 p-2 pt-1 pb-1" bind:this={scroller}>
 		{#each paths as path}
 			<li class="m-0 p-0">{path.displayName}</li>
 		{/each}
 	</ul>
 	
-	<div class="mt-1 flex flex-row justify-center items-center" bind:this={placeholder}>
-		<span class="mt-6 text-sm">-no files yet-</span>
+	<div class="flex flex-row justify-center items-center" bind:this={placeholder}>
+		<span class="mt-4">-no files yet-</span>
 	</div>
 </div>

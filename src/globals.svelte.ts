@@ -4,9 +4,16 @@ export class FilePath {
 	value:string;
 	displayName:string;
 	
-	constructor() {
-		this.value = "";
-		this.displayName = "";
+	constructor(value: string = "", displayName: string = "-none-")
+	{
+		this.value = value;
+		this.displayName = displayName;
+	}
+
+	set(path: string) : void {
+		this.value = path;
+		let segments = path.split('/');
+		this.displayName = segments[segments.length - 1];
 	}
 }
 
@@ -54,7 +61,8 @@ export enum AccentColor {
 	Amber,
 	Green,
 	Sky,
-	Indigo
+	Indigo,
+	Gray
 }
 
 export const accentColor = $state({ color: AccentColor.Violet })
@@ -76,6 +84,8 @@ export function getAccentColorAsString(): string {
 			return "sky";
 		case AccentColor.Indigo:
 			return "indigo";
+		case AccentColor.Gray:
+			return "gray";
 	}
 }
 
@@ -102,6 +112,9 @@ export function setAccentColorByString(colorString: string) {
 			break;
 		case "indigo":
 			accentColor.color = AccentColor.Indigo;
+			break;
+		case "gray":
+			accentColor.color = AccentColor.Gray;
 			break;
 		default:
 			accentColor.color = AccentColor.Violet;

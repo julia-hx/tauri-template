@@ -66,6 +66,14 @@
 		}}
 	>
 	</button>
+	<button
+		class="accent-color-btn size-6 gray"
+		title="gray"
+		onclick={() => {
+			_setAccentColor(AccentColor.Gray);
+		}}
+	>
+	</button>
 </div>
 
 <style>

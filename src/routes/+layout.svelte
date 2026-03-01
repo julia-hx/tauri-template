@@ -17,7 +17,7 @@
 
 <main class="" bind:this={main}>
 	<div class="min-h-screen flex flex-col text-black bg-white dark:text-gray-100 dark:bg-gray-950">
-		<div class="header bg-gray-100 dark:bg-gray-700 pb-1 mb-2">
+		<div class="header bg-gray-100 dark:bg-gray-900 pb-1 mb-2">
 			<Header/>
 		</div>
 		
@@ -26,7 +26,7 @@
 			{@render children()}
 		</div>
 		
-		<div class="footer bg-gray-100 dark:bg-gray-700">
+		<div class="footer bg-gray-100 dark:bg-gray-900">
 			<Footer/>
 		</div>
 	</div>
