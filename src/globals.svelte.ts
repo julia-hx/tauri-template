@@ -46,7 +46,9 @@ export enum AccentColor {
 	Sky,
 	Indigo
 }
+
 export const accentColor = $state({ color: AccentColor.Violet })
+
 export function getAccentColorAsString(): string {
 	switch(accentColor.color)
 	{
@@ -66,6 +68,7 @@ export function getAccentColorAsString(): string {
 			return "indigo";
 	}
 }
+
 export function setAccentColorByString(colorString: string) {
 	switch(colorString)
 	{
@@ -95,4 +98,4 @@ export function setAccentColorByString(colorString: string) {
 	}
 }
 
-
+export const defaultFilePath = $state({path: "none"});

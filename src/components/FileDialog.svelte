@@ -1,7 +1,8 @@
 <script>
 	import Icon from './Icon.svelte';
-	import { IconType } from '../globals.svelte';
+	import { defaultFilePath, IconType } from '../globals.svelte';
 	import { open } from '@tauri-apps/plugin-dialog';
+	import { invoke } from '@tauri-apps/api/core';
 	
 	class FilePath {
 		constructor(index = 0) {
@@ -14,7 +15,7 @@
 	class OpenFileOptions {
 		constructor() {
 			this.title = "Open Files";
-			this.defaultPath = "/home/";
+			this.defaultPath = defaultFilePath.path;
 			this.multiple = true;
 			this.directory = false;
 		}
@@ -23,7 +24,7 @@
 	class OpenFolderOptions {
 		constructor() {
 			this.title = "Open Folder";
-			this.defaultPath = "/home/";
+			this.defaultPath = defaultFilePath.path;
 			this.multiple = false;
 			this.directory = true;
 		}
@@ -47,7 +48,6 @@
 	});
 
 	async function selectSourceFile() {
-		
 		open(new OpenFileOptions()).then((value) => {
 			handleSourceFiles(value);
 		});
@@ -77,16 +77,23 @@
 	}
 
 	async function selectSourceFolder() {
-		let result = open(new OpenFolderOptions()).then((value) => {handleSourceFolder(value)});
+		let result = open(new OpenFolderOptions()).then((value) => {
+			handleSourceFolder(value);
+		});
 	}
 
 	/**
-     * @param {string | null} data
+     * @param {string | null} folderPath
      */
-	function handleSourceFolder(data) {
-		if (data === null) return;
-		sourceFolder = data;
-		console.log("source folder set: " + data);
+	async function handleSourceFolder(folderPath) {
+		if (folderPath === null) return;
+		sourceFolder = folderPath;
+		console.log("source folder set: " + folderPath);
+		await invoke("get_folder_contents", { folderPath }).then((files) => {
+			console.log(files);
+			handleSourceFiles(files);
+		});
+
 	}
 </script>
 
@@ -105,8 +112,8 @@
 	</div>
 </div>
 
-<div class="min-w-64 max-w-120 min-h-16 max-h-36 mt-2 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400">
-	<ul class="h-35 overflow-auto p-2 mt-2" bind:this={scroller}>
+<div class="mt-2 min-w-64 max-w-120 min-h-16 max-h-36 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400">
+	<ul class="overflow-auto min-w-64 max-w-120 min-h-16 max-h-36 p-2 pt-1 pb-1" bind:this={scroller}>
 		{#each paths as path}
 			<li class="m-0 p-0">{path.displayName}</li>
 		{/each}

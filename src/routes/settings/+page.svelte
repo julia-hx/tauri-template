@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { AccentColor } from '../../globals.svelte';
 	import AccentColorPicker from '../../components/AccentColorPicker.svelte';
+	import FolderPicker from '../../components/FolderPicker.svelte';
+	import { _storeDefaultFilepath } from './+page';
+	import { defaultFilePath } from '../../globals.svelte';
 </script>
 
 <div class="flex justify-center items-center flex-col">
@@ -12,14 +14,17 @@
 		User configuration for this app.
 	</p>
 
-	<div class="text-2xl font-sans flex flex-row">
+	<div class="text-lg font-sans flex flex-row">
 		accent color
 	</div>
 
 	<AccentColorPicker/>
 
-	<div class="text-2xl font-sans flex flex-row">
+	<div class="text-lg font-sans flex flex-row mt-2">
 		default file path
 	</div>
-	
+
+	<FolderPicker pathState={defaultFilePath} onPathStateChanged={() => {
+		_storeDefaultFilepath(defaultFilePath.path);
+	}}/>
 </div>

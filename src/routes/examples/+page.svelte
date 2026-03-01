@@ -2,7 +2,7 @@
 	import Icon from "../../components/Icon.svelte";
 	import { IconType } from "../../globals.svelte";
 	import AccentColorPicker from "../../components/AccentColorPicker.svelte";
-	import FileLoader from "../../components/FileLoader.svelte";
+	import FileDialog from "../../components/FileDialog.svelte";
 </script>
 
 <div class="flex justify-center items-center flex-col space-y-0">
@@ -13,7 +13,7 @@
 	<p class="mt-2">Examples of hexing-tauri template components and functionality.</p>
 	<p>Implementation reference: ./src/routes/examples/+page.svelte.</p>
 
-	<div class="text-2xl font-sans mt-6">
+	<div class="text-xl font-sans mt-6">
 		icons
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 
-	<div class="text-2xl font-sans mt-6">
+	<div class="text-xl font-sans mt-6">
 		accent color
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
@@ -53,12 +53,12 @@
 		</div>
 	</div>
 
-	<div class="text-2xl font-sans mt-6">
-		file loader
+	<div class="text-xl font-sans mt-6">
+		file dialog
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
-		Use the FileLoader component to get paths to folders and files on the system:
-		<FileLoader></FileLoader>
+		Use the FileDialog component to get paths to folders and files on the system:
+		<FileDialog></FileDialog>
 	</div>
 </div>
 
