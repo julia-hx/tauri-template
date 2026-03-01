@@ -102,7 +102,7 @@
 	{/if}
 </div>
 
-<div class="min-w-64 max-w-120 min-h-14 max-h-40 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-400">
+<div class="min-w-64 max-w-120 min-h-14 max-h-40 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-400">
 	<ul class="overflow-auto text-sm min-w-64 max-w-120 min-h-14 max-h-40 p-2 pt-1 pb-1" bind:this={scroller}>
 		{#each paths as path}
 			<li class="m-0 p-0">{path.displayName}</li>

@@ -23,7 +23,7 @@
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
 		A selection of Tailwind Hero Icons are included, such as:
-		<div class="flex flex-row justify-center mt-2">
+		<div class="flex flex-row justify-center mt-2 space-x-1">
 			<Icon type={IconType.ArrowLeft}/>
 			<Icon type={IconType.Paintbrush}/>
 			<Icon type={IconType.Photo}/>
@@ -63,7 +63,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>FolderPicker component to get a single folder path from the system:</p>
+		<p>FolderPicker component gets a single folder path from the system:</p>
 		<div class="mt-2s">
 			<FolderPicker 
 				label="folder picker" 
@@ -76,7 +76,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>FilePicker for a single file path:</p>
+		<p>FilePicker gets a single file path:</p>
 		<div class="mt-2s">
 			<FilePicker 
 				label="file picker" 

@@ -3,7 +3,7 @@
 		about
 	</span>
 	
-	<p class="mt-2">About this app.</p>
+	<p class="mt-2">Describe your app here.</p>
 
-	<a class="mt-4" href="./examples">Template usage examples</a>
+	<a class="mt-0" href="./examples">Template usage examples</a>
 </div>
