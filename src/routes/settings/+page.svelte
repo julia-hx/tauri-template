@@ -1,7 +1,7 @@
 <div class="flex justify-center items-center flex-col">
 	<span class="text-3xl font-sans">
-		about
+		settings
 	</span>
 	
-	<p class="mt-2">About this app.</p>
+	<p class="mt-2">App settings.</p>
 </div>

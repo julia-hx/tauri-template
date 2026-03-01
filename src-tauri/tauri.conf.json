@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "tauri-template",
+  "productName": "hexing-tauri",
   "version": "0.1.0",
-  "identifier": "com.julia.hx.tauri-template",
+  "identifier": "com.julia.hx.hexing-tauri",
   "build": {
     "beforeDevCommand": "yarn dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "tauri-template",
+        "title": "hexing tauri",
         "width": 800,
         "height": 600
       }

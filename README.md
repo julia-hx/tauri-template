@@ -1,8 +1,9 @@
-# Tauri + SvelteKit + Tailwind Template
+# hexing tauri
 
-Template for a Rust app with a web technology UI layer.
+An app template for Tauri / Svelte / Tailwind, using Rust backend and web frontend.
 
-Extends the auto-generated Tauri/Sveltekit template to include Tailwind CSS and Icons, and UI Mode toggle for dark/light mode.
+Extends the auto-generated Tauri/Sveltekit template to include Tailwind CSS and Icons, a UI Mode toggle for dark/light mode, and re-usable components.
+
 Uses yarn to build and run.
 
 ## Recommended IDE Setup
