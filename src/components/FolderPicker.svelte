@@ -1,9 +1,10 @@
 <script>
-	import Icon from './Icon.svelte';
+	import IconButton from './IconButton.svelte';
 	import { IconType } from '../globals.svelte';
 	import { open } from '@tauri-apps/plugin-dialog';
 	import { defaultFilePath } from '../globals.svelte';
 	import { LazyStore } from '@tauri-apps/plugin-store';
+    import { on } from 'svelte/events';
 
 	class OpenFolderOptions {
 		constructor() {
@@ -24,24 +25,21 @@
 			onPathStateChanged();
 		});
 	}
+
+	async function resetFolder() {
+		pathState.path = "-none-";
+		onPathStateChanged();
+	}
 </script>
 
 <div class="flex justify-center items-center flex-col text-sm">
 	<div class="flex flex-row items-center mt-2">
+		<IconButton iconType={IconType.Folder} onClick={selectFolder}/>
+		
 		<div class="display ml-1 h-7 min-w-24 max-w-104 truncate">
 			{pathState.path}
 		</div>
-		<button class="size-7 ml-2" onclick={selectFolder}>
-			<div class="nudge-icon">
-				<Icon type={IconType.Folder}></Icon>
-			</div>
-		</button>
+		
+		<IconButton iconType={IconType.Trash} onClick={resetFolder}/>
 	</div>
 </div>
-
-<style>
-.nudge-icon {
-	margin-left: -6px;
-	margin-top: -2px;
-}
-</style>

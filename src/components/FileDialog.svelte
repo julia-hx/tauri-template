@@ -1,5 +1,5 @@
 <script>
-	import Icon from './Icon.svelte';
+	import IconButton from './IconButton.svelte';
 	import { defaultFilePath, IconType } from '../globals.svelte';
 	import { open } from '@tauri-apps/plugin-dialog';
 	import { invoke } from '@tauri-apps/api/core';
@@ -82,6 +82,11 @@
 		});
 	}
 
+	function reset() {
+		pathsLoaded = false;
+		paths = [new FilePath(0)];
+	}
+
 	/**
      * @param {string | null} folderPath
      */
@@ -93,40 +98,23 @@
 			console.log(files);
 			handleSourceFiles(files);
 		});
-
 	}
 </script>
 
-<div class="flex justify-center items-center flex-col text-sm">
-	<div class="flex flex-row items-center mt-2">
-		<button class="size-7" onclick={selectSourceFile}>
-			<div class="nudge-icon">
-				<Icon type={IconType.Document}></Icon>
-			</div>
-		</button>
-		<button class="size-7 ml-2" onclick={selectSourceFolder}>
-			<div class="nudge-icon">
-				<Icon type={IconType.Folder}></Icon>
-			</div>
-		</button>
-	</div>
+<div class="flex flex-row text-sm space-x-1">
+	<IconButton iconType={IconType.Document} onClick={selectSourceFile}/>
+	<IconButton iconType={IconType.Folder} onClick={selectSourceFolder}/>
+	<IconButton iconType={IconType.Trash} onClick={reset}/>
 </div>
 
-<div class="mt-2 min-w-64 max-w-120 min-h-16 max-h-36 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400">
-	<ul class="overflow-auto min-w-64 max-w-120 min-h-16 max-h-36 p-2 pt-1 pb-1" bind:this={scroller}>
+<div class="mt-2 min-w-64 max-w-120 min-h-14 max-h-40 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400">
+	<ul class="overflow-auto min-w-64 max-w-120 min-h-14 max-h-40 p-2 pt-1 pb-1" bind:this={scroller}>
 		{#each paths as path}
 			<li class="m-0 p-0">{path.displayName}</li>
 		{/each}
 	</ul>
 	
-	<div class="flex flex-row mt-5 justify-center" bind:this={placeholder}>
-		<span >-no files yet-</span>
+	<div class="flex flex-row justify-center items-center" bind:this={placeholder}>
+		<span class="mt-4">-no files yet-</span>
 	</div>
 </div>
-
-<style>
-.nudge-icon {
-	margin-left: -6px;
-	margin-top: -2px;
-}
-</style>

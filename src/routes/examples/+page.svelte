@@ -56,9 +56,11 @@
 	<div class="text-xl font-sans mt-6">
 		file dialog
 	</div>
-	<div class="mt-2 flex flex-col justify-center items-center">
-		Use the FileDialog component to get paths to folders and files on the system:
-		<FileDialog></FileDialog>
+	<div class="mt-2 flex flex-col items-center">
+		<p>Use the FileDialog component to get paths to folders and files on the system:</p>
+		<div class="mt-2">
+			<FileDialog/>
+		</div>
 	</div>
 </div>
 

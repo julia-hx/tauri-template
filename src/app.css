@@ -1,4 +1,4 @@
-@import "tailwindcss"; 
+@import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @custom-variant violet (&:where(.violet, .violet *));
@@ -113,3 +113,4 @@ a:hover {
 	padding-top: 4px;
 	padding-right: 8px;
 }
+	
