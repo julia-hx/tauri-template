@@ -38,3 +38,10 @@ Usage in html:
 ```
 <Icon type={IconType.Heart} offset="-4" size="32"/> 
 ```
+## Settings
+
+A settings page is included.
+
+By default, user can set an accent color for the app.
+
+
