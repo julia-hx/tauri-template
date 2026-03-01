@@ -17,5 +17,9 @@
 	</div>
 
 	<AccentColorPicker/>
+
+	<div class="text-2xl font-sans flex flex-row">
+		default file path
+	</div>
 	
 </div>

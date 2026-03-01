@@ -2,6 +2,7 @@
 	import Icon from "../../components/Icon.svelte";
 	import { IconType } from "../../globals.svelte";
 	import AccentColorPicker from "../../components/AccentColorPicker.svelte";
+	import FileLoader from "../../components/FileLoader.svelte";
 </script>
 
 <div class="flex justify-center items-center flex-col">
@@ -35,7 +36,7 @@
 		
 		<p class="mt-2">Elements can <span class="accent-light">use</span> <span class="accent">accent</span> <span class="accent-heavy">colors</span>,</p>
 		<p>or react to them:</p>
-		<div class="accent-bg w-24 h-10 rounded-2xl">
+		<div class="accent-bg w-24 h-10 rounded-2xl mt-1">
 			<div class="flex flex-row justify-center pt-2
 				violet:text-amber-200
 				fuchsia:text-gray-900
@@ -50,6 +51,14 @@
 				<Icon type={IconType.Sparkles}/>
 			</div>
 		</div>
+	</div>
+
+	<div class="text-2xl font-sans mt-4">
+		file loader
+	</div>
+	<div class="mt-2 flex flex-col justify-center items-center">
+		Use the FileLoader component to get paths to folders and files on the system:
+		<FileLoader></FileLoader>
 	</div>
 </div>
 

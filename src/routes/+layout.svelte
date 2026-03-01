@@ -17,12 +17,28 @@
 
 <main class="" bind:this={main}>
 	<div class="min-h-screen flex flex-col text-black bg-white dark:text-gray-100 dark:bg-gray-950">
-		<Header></Header>
+		<div class="header bg-white dark:bg-gray-950 pb-2">
+			<Header/>
+		</div>
+		
 
-		<div class="grow p-4">
+		<div class="grow">
 			{@render children()}
 		</div>
 		
-		<Footer></Footer>
+		<div class="footer bg-white dark:bg-gray-950">
+			<Footer/>
+		</div>
 	</div>
 </main>
+
+<style>
+	.header {
+		position: sticky;
+		top: 0;
+	}
+	.footer {
+		position: sticky;
+		bottom: 0;
+	}
+</style>
