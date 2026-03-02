@@ -6,6 +6,7 @@
 	import FilePicker from "../../components/FilePicker.svelte";
 	import FileDialog from "../../components/FileDialog.svelte";
 	import OptionsDialog from "../../components/OptionsDialog.svelte";
+	import IconButton from "../../components/IconButton.svelte";
 
 	let exampleFolderPath = $state({path: "-none-"});
 	let exampleFilePath = $state({path: "-none-"});
@@ -46,13 +47,21 @@
 			<Icon type={IconType.Heart}/>
 			<Icon type={IconType.CogEight}/>
 		</div>
+		<p class="mt-2">There is also an <span class="font-bold">Icon Button</span> component:</p>
+		<div class="flex flex-row justify-center mt-2 space-x-1">
+			<div class="flex flex-row justify-center mt-0 space-x-1">
+				<IconButton iconType={IconType.Heart} onClick={()=>{console.log("heart!")}}/>
+				<IconButton iconType={IconType.Sparkles} onClick={()=>{console.log("sparkles!")}}/>
+				<IconButton iconType={IconType.MusicalNote} onClick={()=>{console.log("music!")}}/>
+			</div>
+		</div>
 	</div>
 
 	<div class="text-xl font-sans mt-6">
 		accent color
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
-		Use the AccentColorPicker component from anywhere:
+		<p>Use the <span class="font-bold">AccentColorPicker</span> component from anywhere:</p>
 		<AccentColorPicker/>
 		
 		<p class="mt-2">Elements can <span class="accent-light">use</span> <span class="accent">accent</span> <span class="accent-heavy">colors</span>,</p>
@@ -79,7 +88,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>FolderPicker component gets a single folder path from the system:</p>
+		<p><span class="font-bold">FolderPicker</span> component gets a single folder path from the system:</p>
 		<div class="mt-2s">
 			<FolderPicker 
 				label="folder picker" 
@@ -92,7 +101,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>FilePicker gets a single file path:</p>
+		<p><span class="font-bold">FilePicker</span> gets a single file path:</p>
 		<div class="mt-2s">
 			<FilePicker 
 				label="file picker" 
@@ -105,14 +114,14 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>FileDialog component gets paths to files or folder contents on the system:</p>
+		<p><span class="font-bold">FileDialog</span> gets paths to files or folder contents on the system:</p>
 		<div class="mt-2">
 			<FileDialog label="file dialog"/>
 		</div>
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>OptionDialog consists of a button that opens a list of configured options:</p>
+		<p><span class="font-bold">OptionDialog</span> consists of a button that opens a list of configured options:</p>
 		<div class="mt-2 flex flex-row">
 			<OptionsDialog
 				id="usage-examples-options"
@@ -123,7 +132,7 @@
 					// no-op in this example
 				}}
 			 />
-			 <div class="display mt-0.5 ml-1">
+			 <div class="display mt-0 ml-1">
 				<span>{exampleOptionState.value}</span>
 			 </div>
 		</div>
@@ -139,7 +148,7 @@
 					// no-op in this example
 				}}
 			 />
-			 <div class="display mt-0.5 ml-1">
+			 <div class="display mt-0 ml-1">
 				<span>{exampleOptionStateSimple.value}</span>
 			 </div>
 		</div>

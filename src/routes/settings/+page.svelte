@@ -6,13 +6,9 @@
 </script>
 
 <div class="flex justify-center items-center flex-col">
-	<div class="text-3xl font-sans flex flex-row">
+	<div class="text-3xl font-sans flex flex-row mb-1">
 		settings
 	</div>
-
-	<p class="mt-2 mb-4">
-		User configuration for this app.
-	</p>
 
 	<div class="flex flex-col space-y-2 justify-center items-center">
 		<span class="label no-margins pull-up-2">accent color</span>
