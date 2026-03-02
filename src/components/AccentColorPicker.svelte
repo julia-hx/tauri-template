@@ -11,6 +11,14 @@
 
 <div class="flex flex-row items-center space-x-2">
 	<button
+		class="accent-color-btn size-6 indigo"
+		title="indigo"
+		onclick={() => {
+			_setAccentColor(AccentColor.Indigo);
+		}}
+	>
+	</button>
+	<button
 		class="accent-color-btn size-6 violet"
 		title="violet"
 		onclick={() => {
@@ -55,14 +63,6 @@
 		title="sky"
 		onclick={() => {
 			_setAccentColor(AccentColor.Sky);
-		}}
-	>
-	</button>
-	<button
-		class="accent-color-btn size-6 indigo"
-		title="indigo"
-		onclick={() => {
-			_setAccentColor(AccentColor.Indigo);
 		}}
 	>
 	</button>

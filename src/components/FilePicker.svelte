@@ -39,7 +39,7 @@
 		<IconButton iconType={IconType.Document} onClick={selectFile}/>
 		<IconButton iconType={IconType.Trash} onClick={reset}/>
 		
-		<div class="truncate ml-1 pt-1 pl-2 pr-2 h-7 min-w-10 max-w-80 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-400">
+		<div class="truncate ml-1 pt-1 pl-2 pr-2 h-7 min-w-10 max-w-80 display">
 			<span>{filePath.displayName}</span>
 		</div>
 		

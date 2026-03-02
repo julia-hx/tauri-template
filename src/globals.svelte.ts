@@ -1,4 +1,5 @@
 export const uiMode = $state({ isDarkMode: true });
+import OptionsDialog from "./components/OptionsDialog.svelte";
 
 export class FilePath {
 	value:string;
@@ -14,6 +15,31 @@ export class FilePath {
 		this.value = path;
 		let segments = path.split('/');
 		this.displayName = segments[segments.length - 1];
+	}
+}
+
+export class OptionDialogState {
+	isActive:boolean;
+	closeActiveDialog:Function;
+
+	constructor()
+	{
+		this.isActive = false;
+		this.closeActiveDialog = () => {};
+	}
+}
+export const optionDialogState = $state(new OptionDialogState());
+
+export class OptionConfig {
+	value:string;
+	tooltip:string;
+	showTooltip:boolean;
+
+	constructor(value: string, tooltip: string = "", showTooltip = false)
+	{
+		this.value = value;
+		this.tooltip = tooltip;
+		this.showTooltip = showTooltip;
 	}
 }
 

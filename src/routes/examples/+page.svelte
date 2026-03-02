@@ -1,13 +1,29 @@
 <script>
 	import Icon from "../../components/Icon.svelte";
-	import { IconType } from "../../globals.svelte";
+	import { IconType, OptionConfig } from "../../globals.svelte";
 	import AccentColorPicker from "../../components/AccentColorPicker.svelte";
 	import FolderPicker from "../../components/FolderPicker.svelte";
 	import FilePicker from "../../components/FilePicker.svelte";
 	import FileDialog from "../../components/FileDialog.svelte";
+	import OptionsDialog from "../../components/OptionsDialog.svelte";
 
 	let exampleFolderPath = $state({path: "-none-"});
 	let exampleFilePath = $state({path: "-none-"});
+	let exampleOptionState = $state({value: "-none-"});
+	let exampleOptions = [
+		new OptionConfig("Lemons", "julia's favorite!", true),
+		new OptionConfig("Apples", "similar to Pears, really", true),
+		new OptionConfig("Pears"),
+		new OptionConfig("Physalis", "too good", true),
+		new OptionConfig("Strawberries", "sweet berries", true),
+		new OptionConfig("Mango", "this is the fruit that has the uv-map color gradient", true)
+	];
+	let exampleOptionStateSimple = $state({value: "-none-"});
+	let exampleOptionsSimple = [
+		new OptionConfig("ok"),
+		new OptionConfig("no thanks!"),
+		new OptionConfig("huh?")
+	]
 </script>
 
 <div class="flex justify-center items-center flex-col space-y-0">
@@ -92,6 +108,38 @@
 		<p>FileDialog component gets paths to files or folder contents on the system:</p>
 		<div class="mt-2">
 			<FileDialog label="file dialog"/>
+		</div>
+	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>OptionDialog consists of a button that opens a list of configured options:</p>
+		<div class="mt-2 flex flex-row">
+			<OptionsDialog 
+				label="options" 
+				optionState={exampleOptionState}
+				options={exampleOptions}
+				onOptionStateChanged = {() => {
+					// no-op in this example
+				}}
+			 />
+			 <div class="display mt-0.5 ml-1">
+				<span>{exampleOptionState.value}</span>
+			 </div>
+		</div>
+		<p class="mt-1">Another one with simpler config:</p>
+		<div class="mt-0 flex flex-row">
+			<OptionsDialog 
+				label="simple options" 
+				optionState={exampleOptionStateSimple }
+				options={exampleOptionsSimple}
+				centerOptions={true}
+				onOptionStateChanged = {() => {
+					// no-op in this example
+				}}
+			 />
+			 <div class="display mt-0.5 ml-1">
+				<span>{exampleOptionStateSimple.value}</span>
+			 </div>
 		</div>
 	</div>
 </div>
