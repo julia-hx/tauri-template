@@ -83,6 +83,27 @@
 	--color-accent-light: theme(--color-gray-400);
 }
 
+.accent {
+	color: var(--color-accent);
+}
+.accent-light {
+	color: var(--color-accent-light);
+}
+.accent-heavy {
+	color: var(--color-accent-heavy);
+}
+.bg-accent {
+	background-color: var(--color-accent);
+}
+.bg-accent-light
+{
+	background-color: var(--color-accent-light);
+}
+.bg-accent-heavy
+{
+	background-color: var(--color-accent-heavy);
+}
+
 textarea, input, button, a { outline: 0px; }
 input {
 	border-radius: 8px;

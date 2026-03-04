@@ -3,7 +3,9 @@
 		about
 	</span>
 	
-	<p class="mt-2">Describe your app here.</p>
-
-	<a class="mt-0" href="./examples">usage examples</a>
+	<p class="mt-2">Go to
+		<a class="mt-0 color-accent font-bold" href="./examples">template usage examples</a>
+	</p>	
+	<p>to learn about what's included!</p>
+	<p class="mt-2">When building your own app you can describe it here.</p>
 </div>

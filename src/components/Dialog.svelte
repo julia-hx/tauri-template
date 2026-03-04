@@ -20,9 +20,9 @@
 			dialogState.hideActiveDialog();
 		}
 		dialogState.activeDialogId = id;
-		dialogState.hideActiveDialog = () => { close(); }	
+		dialogState.hideActiveDialog = () => { hide(); }	
 	}
-	export function close() {
+	export function hide() {
 		showButton.hidden = false;
 		hideButton.hidden = true;
 		dialogContainer.hidden = true;
@@ -36,14 +36,14 @@
 			<IconButton iconType={icon} onClick={show}/>
 		</div>
 		<div bind:this={hideButton} hidden>
-			<IconButton iconType={IconType.XMark} onClick={close}/>
+			<IconButton iconType={IconType.XMark} onClick={hide}/>
 		</div>
 	</div>
 
 	<div class="dialogContainer" bind:this={dialogContainer} hidden>
 		<div class="dialogHeader flex flex-row items-center">
 			<span class="dialogLabel">{label}</span>
-			<button class="dialogExitButton" onclick={()=>{close()}}>
+			<button class="dialogExitButton" onclick={()=>{hide()}}>
 				<Icon type={IconType.XMark} size=24 offset=0/>
 			</button>
 		</div>

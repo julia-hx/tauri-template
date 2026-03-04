@@ -7,7 +7,7 @@
 	import FileDialog from "../../components/FileDialog.svelte";
 	import OptionsDialog from "../../components/OptionsDialog.svelte";
 	import IconButton from "../../components/IconButton.svelte";
-	import Dialog from "../../elements/Dialog.svelte";
+	import Dialog from "../../components/Dialog.svelte";
 
 	let exampleDialogSize = $state("md");
 
@@ -69,7 +69,7 @@
 		
 		<p class="mt-2">Elements can <span class="accent-light">use</span> <span class="accent">accent</span> <span class="accent-heavy">colors</span>,</p>
 		<p>or react to them:</p>
-		<div class="accent-bg w-24 h-10 rounded-2xl mt-1">
+		<div class="bg-accent w-24 h-10 rounded-2xl mt-1">
 			<div class="flex flex-row justify-center pt-2
 				violet:text-amber-200
 				fuchsia:text-gray-900
@@ -150,34 +150,26 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>Dialog icons can be overridden. Only one dialog can be open at the time.</p>
+		<p>Dialog button icons can be overridden. Only one dialog can be open at the time.</p>
 		<div class="mt-2 flex flex-row space-x-2">
-			<Dialog id="dialog-eye" label="eye" icon={IconType.Eye}>
-
+			<Dialog id="dialog-eye" label="eye" icon={IconType.Eye} size="md">
+				<p>The human eye is a sensory organ in the visual system that reacts to visible light allowing eyesight. Other functions include maintaining the circadian rhythm, and keeping balance. </p>
+				<a href="https://en.wikipedia.org/wiki/Human_eye" target="_blank">wiki</a>
 			</Dialog>
 
-			<Dialog id="dialog-fire" label="fire" icon={IconType.Fire}>
-
+			<Dialog id="dialog-fire" label="fire" icon={IconType.Fire} size="lg">
+				<p>The control of fire by early humans was a critical technology enabling the evolution of humans. Fire provided a source of warmth and lighting, protection from predators (especially at night), a way to create more advanced hunting tools, and a method for cooking food. These cultural advances allowed human geographic dispersal, cultural innovations, and changes to diet and behavior. Additionally, the ability to start fires allowed human activity to continue into the darker and colder hours of the evening. </p>
+				<a href="https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans" target="_blank">wiki</a>
 			</Dialog>
 
-			<Dialog id="dialog-tools" label="tools" icon={IconType.Wrench}>
-
+			<Dialog id="dialog-tools" label="tools" icon={IconType.Wrench} size="xl">
+				<p>Common ravens (Corvus corax) are one of only a few species who make their own toys. They have been observed breaking off twigs to play with socially. A corvid has been filmed sliding repeatedly down a snow-covered roof while balancing on a lid or tray. Another incidence of play in birds has been filmed showing a corvid playing with a table tennis ball in partnership with a dog, a rare example of tool use for the purposes of play. Blue jays, like other corvids, are highly curious and are considered intelligent birds. Young blue jays playfully snatch brightly coloured or reflective objects, such as bottle caps or pieces of aluminium foil, and carry them around until they lose interest. </p>
+				<a href="https://en.wikipedia.org/wiki/Tool_use_by_non-humans" target="_blank">wiki</a>
 			</Dialog>
 		</div>
 	</div>
 </div>
 
 <style>
-	.accent {
-		color: var(--color-accent);
-	}
-	.accent-light {
-		color: var(--color-accent-light);
-	}
-	.accent-heavy {
-		color: var(--color-accent-heavy);
-	}
-	.accent-bg {
-		background-color: var(--color-accent);
-	}
+
 </style>
