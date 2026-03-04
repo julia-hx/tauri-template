@@ -128,7 +128,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>The generic <span class="font-bold">Dialog</span> element can contain anything:</p>
+		<p>The <span class="font-bold">Dialog</span> component can contain anything:</p>
 		<div class="mt-2 flex flex-row">
 			<Dialog id="example-dialog" 
 				label="dialog" 
@@ -150,37 +150,19 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p><span class="font-bold">OptionDialog</span> is a specialized Dialog for setting a state variable from a set of options:</p>
-		<div class="mt-2 flex flex-row">
-			<OptionsDialog
-				id="usage-examples-options"
-				label="options"
-				size="xl"
-				optionState={exampleOptionState}
-				options={exampleOptions}
-				onOptionStateChanged = {() => {
-					// no-op in this example
-				}}
-			 />
-			 <div class="display ml-1">
-				<span>{exampleOptionState.value}</span>
-			 </div>
-		</div>
-		<p class="mt-1">Another one with simpler config:</p>
-		<div class="mt-0 flex flex-row">
-			<OptionsDialog 
-				id="usage-examples-options-simple"
-				label="simple options" 
-				optionState={exampleOptionStateSimple }
-				options={exampleOptionsSimple}
-				centerOptions={true}
-				onOptionStateChanged = {() => {
-					// no-op in this example
-				}}
-			 />
-			 <div class="display mt-0 ml-1">
-				<span>{exampleOptionStateSimple.value}</span>
-			 </div>
+		<p>Dialog icons can be overridden. Only one dialog can be open at the time.</p>
+		<div class="mt-2 flex flex-row space-x-2">
+			<Dialog id="dialog-eye" label="eye" icon={IconType.Eye}>
+
+			</Dialog>
+
+			<Dialog id="dialog-fire" label="fire" icon={IconType.Fire}>
+
+			</Dialog>
+
+			<Dialog id="dialog-tools" label="tools" icon={IconType.Wrench}>
+
+			</Dialog>
 		</div>
 	</div>
 </div>

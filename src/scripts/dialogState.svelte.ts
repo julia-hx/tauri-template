@@ -1,17 +1,17 @@
 export class DialogState {
 	activeDialogId:string;
-	closeActiveDialog:Function;
+	hideActiveDialog:Function;
 
 	constructor()
 	{
 		this.activeDialogId = "NONE";
-		this.closeActiveDialog = () => {};
+		this.hideActiveDialog = () => {};
 	}
 
 	reset(): void {
-		this.closeActiveDialog();
+		this.hideActiveDialog();
 		this.activeDialogId = "NONE";
-		this.closeActiveDialog = () => {};
+		this.hideActiveDialog = () => {};
 	}
 }
 export const dialogState = $state(new DialogState());

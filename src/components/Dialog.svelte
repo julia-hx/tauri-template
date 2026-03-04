@@ -17,10 +17,10 @@
 
 		if(dialogState.activeDialogId != id)
 		{
-			dialogState.closeActiveDialog();
+			dialogState.hideActiveDialog();
 		}
 		dialogState.activeDialogId = id;
-		dialogState.closeActiveDialog = () => { close(); }	
+		dialogState.hideActiveDialog = () => { close(); }	
 	}
 	export function close() {
 		showButton.hidden = false;

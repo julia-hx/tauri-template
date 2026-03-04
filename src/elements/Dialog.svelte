@@ -4,6 +4,7 @@
 	import IconButton from "../components/IconButton.svelte";
 	import Icon from "../components/Icon.svelte";
 	import { IconType } from "../globals.svelte";
+    import { dialogState } from "../scripts/dialogState.svelte";
 
 	let { id = "Dialog", label = "Dialog", size = "md", noButton=false, icon=IconType.Window} = $props();
 
@@ -12,9 +13,16 @@
 	let dialogContainer: HTMLElement;
 
 	export function show() {
+		if(dialogState.activeDialogId != id) {
+			dialogState.hideActiveDialog();
+		}
+
 		showButton.hidden = true;
 		hideButton.hidden = false;
 		dialogContainer.hidden = false;
+
+		dialogState.activeDialogId = id;
+		dialogState.hideActiveDialog = () => { hide(); };
 	}
 	export function hide() {
 		showButton.hidden = false;
