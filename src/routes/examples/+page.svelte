@@ -137,6 +137,7 @@
 
 				<p>Apply dialog sizes:</p>
 				<div class="flex flex-row items-center space-x-2 md-2">
+					<button onclick={()=>{exampleDialogSize="xs"}}>SM</button>
 					<button onclick={()=>{exampleDialogSize="sm"}}>SM</button>
 					<button onclick={()=>{exampleDialogSize="md"}}>MD</button>
 					<button onclick={()=>{exampleDialogSize="lg"}}>LG</button>
@@ -158,7 +159,7 @@
 			</Dialog>
 
 			<Dialog id="dialog-fire" label="fire" icon={IconType.Fire} size="lg">
-				<p>The control of fire by early humans was a critical technology enabling the evolution of humans. Fire provided a source of warmth and lighting, protection from predators (especially at night), a way to create more advanced hunting tools, and a method for cooking food. These cultural advances allowed human geographic dispersal, cultural innovations, and changes to diet and behavior. Additionally, the ability to start fires allowed human activity to continue into the darker and colder hours of the evening. </p>
+				<p>Fire is the rapid oxidation of a fuel in the exothermic chemical process of combustion, releasing heat, light, and various reaction products. Flames, the most visible portion of the fire, are produced in the combustion reaction when the fuel reaches its ignition point temperature. Flames from hydrocarbon fuels consist primarily of carbon dioxide, water vapor, oxygen, and nitrogen. If hot enough, the gases may become ionized to produce plasma. The color and intensity of the flame depend on the type of fuel and composition of the surrounding gases.</p>
 				<a href="https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans" target="_blank">wiki</a>
 			</Dialog>
 
@@ -168,8 +169,53 @@
 			</Dialog>
 		</div>
 	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>Dialog buttons can be set to display the dialogs label.</p>
+		<div class="mt-2 flex flex-row space-x-2">
+			<Dialog id="dialog-labeled" labeledButton={true} size="sm" label="LABELED">
+				<div class="flex flex-col justify-center items-center mt-16">
+					<Icon type={IconType.Heart}/>
+				</div>
+			</Dialog>
+		</div>
+	</div>
+
+	<div class="text-xl font-sans mt-6">
+		options dialogs
+	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>The <span class="font-bold">OptionsDialog</span> is a specialized dialog component for setting a state value from a set of configured options:</p>
+		<div class="mt-2 flex flex-row space-x-2">
+			<OptionsDialog id="example-options-dialog"
+				optionState={exampleOptionState}
+				options={exampleOptions}
+				label="yummy"
+			/>
+			<span class="display">
+				{exampleOptionState.value}
+			</span>
+		</div>
+		<p>Default options orientation is "left".</p>
+	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>A simpler options config in size xs, with orientation set to "center":</p>
+		<div class="mt-2 flex flex-row space-x-2">
+			<OptionsDialog id="options-simple"
+				optionState={exampleOptionStateSimple}
+				options={exampleOptionsSimple}
+				label="choice?"
+				size="xs"
+				orientation="center"
+			/>
+			<span class="display">
+				{exampleOptionStateSimple.value}
+			</span>
+		</div>
+	</div>
 </div>
 
 <style>
-
 </style>

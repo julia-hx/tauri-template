@@ -18,24 +18,6 @@ export class FilePath {
 	}
 }
 
-export class OptionDialogState {
-	activeDialogId:string;
-	closeActiveDialog:Function;
-
-	constructor()
-	{
-		this.activeDialogId = "NONE";
-		this.closeActiveDialog = () => {};
-	}
-
-	reset(): void {
-		this.closeActiveDialog();
-		this.activeDialogId = "NONE";
-		this.closeActiveDialog = () => {};
-	}
-}
-export const optionDialogState = $state(new OptionDialogState());
-
 export class OptionConfig {
 	value:string;
 	tooltip:string;

@@ -4,10 +4,17 @@
 	import { IconType } from "../globals.svelte";
 	import { dialogState } from "../scripts/dialogState.svelte";
 
-	let { id = "Dialog", label = "Dialog", size = "md", noButton=false, icon=IconType.ArrowTopRightOnSquare } = $props();
+	let { 
+		id = "Dialog",
+		label = "Dialog",
+		size = "md",
+		noButton=false,
+		labeledButton=false,
+		icon=IconType.ArrowTopRightOnSquare
+	} = $props();
 
-	let showButton: HTMLElement;
-	let hideButton: HTMLElement;
+	let showButton : HTMLElement;
+	let hideButton : HTMLElement;
 	let dialogContainer: HTMLElement;
 
 	export function show() {
@@ -31,12 +38,22 @@
 
 
 <div class="{size}">
-	<div class="flex flex-row items-center hidden={noButton}">
-		<div bind:this={showButton}>
+	<div hidden={noButton}>
+		<div bind:this={showButton} class="flex flex-row items-center" >
 			<IconButton iconType={icon} onClick={show}/>
+			{#if labeledButton}
+			<div class="label buttonLabel">
+				<span>{label}</span>
+			</div>
+			{/if}
 		</div>
-		<div bind:this={hideButton} hidden>
+		<div bind:this={hideButton} hidden class="flex flex-row items-center">
 			<IconButton iconType={IconType.XMark} onClick={hide}/>
+			{#if labeledButton}
+			<div class="label buttonLabel">
+				<span>{label}</span>
+			</div>
+			{/if}
 		</div>
 	</div>
 
@@ -58,6 +75,10 @@
 
 
 <style>
+.buttonLabel {
+	margin-left: -2px;
+}
+
 .dialogHeader {
 	margin-top: 2px;
 }
@@ -71,6 +92,9 @@
 	margin-left:12px;
 	width: 260px;
 	white-space: nowrap;
+}
+.xs .dialogLabel {
+	width: 112px;
 }
 .sm .dialogLabel {
 	width: 162px;
@@ -88,13 +112,6 @@
 
 .dialogContainer {
 	background-color: var(--color-accent-light);
-	
-	/*
-	outline-color: var(--color-accent-heavy);
-	outline-style: solid;
-	outline-width: 3px;
-	*/
-
 	z-index: 100;
 	border-radius: 10px;
 	position: fixed;
@@ -105,6 +122,12 @@
 	height: 300px;
 	margin-top: -150px;
 	margin-left: -150px;
+}
+.xs .dialogContainer {
+	width: 150px;
+	height: 150px;
+	margin-top: -75px;
+	margin-left: -75px;
 }
 .sm .dialogContainer {
 	width: 200px;
@@ -136,6 +159,10 @@
 	margin-left: 5px;
 	padding-right: 5px;
 }
+.xs .dialogScroller {
+	width: 140px;
+	height: 114px;
+}
 .sm .dialogScroller {
 	width: 190px;
 	height: 164px;
@@ -149,6 +176,4 @@
 	height: 464px;
 	scroll-behavior: auto;
 }
-
-
 </style>
