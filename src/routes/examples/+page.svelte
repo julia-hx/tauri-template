@@ -8,6 +8,7 @@
 	import OptionsDialog from "../../components/OptionsDialog.svelte";
 	import IconButton from "../../components/IconButton.svelte";
 	import Dialog from "../../components/Dialog.svelte";
+	import Toggle from "../../components/Toggle.svelte";
 
 	let exampleDialogSize = $state("md");
 
@@ -169,7 +170,7 @@
 				<a href="https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans" target="_blank">wiki</a>
 			</Dialog>
 
-			<Dialog id="dialog-tools" label="tools" icon={IconType.Wrench} size="xl">
+			<Dialog id="dialog-tools" label="tools" icon={IconType.WrenchScrewdriver} size="xl">
 				<p>Common ravens (Corvus corax) are one of only a few species who make their own toys. They have been observed breaking off twigs to play with socially. A corvid has been filmed sliding repeatedly down a snow-covered roof while balancing on a lid or tray. Another incidence of play in birds has been filmed showing a corvid playing with a table tennis ball in partnership with a dog, a rare example of tool use for the purposes of play. Blue jays, like other corvids, are highly curious and are considered intelligent birds. Young blue jays playfully snatch brightly coloured or reflective objects, such as bottle caps or pieces of aluminium foil, and carry them around until they lose interest. </p>
 				<a href="https://en.wikipedia.org/wiki/Tool_use_by_non-humans" target="_blank">wiki</a>
 			</Dialog>
@@ -191,7 +192,7 @@
 		options dialogs
 	</div>
 
-	<div class="mt-2 flex flex-col items-center">
+	<div class="mt-2 flex flex-col justify-center items-center">
 		<p>The <span class="font-bold">OptionsDialog</span> is a specialized dialog component for setting a state value from a set of configured options:</p>
 		<div class="mt-2 flex flex-row space-x-2">
 			<OptionsDialog id="example-options-dialog"
@@ -203,22 +204,35 @@
 				{exampleOptionState.value}
 			</span>
 		</div>
-		<p class="mt-2">Default options orientation is "left".</p>
 	</div>
 
-	<div class="mt-2 flex flex-col items-center">
-		<p>A simpler options config in size xs, with "centered" property set to true:</p>
+	<div class="mt-2 flex flex-col justify-center items-center">
+		<p>A simpler options config in size xs, with "centered" and "labeledButton" set to true:</p>
 		<div class="mt-2 flex flex-row space-x-2">
 			<OptionsDialog id="options-simple"
 				optionState={exampleOptionStateSimple}
 				options={exampleOptionsSimple}
 				label="choice?"
+				labeledButton={true}
 				size="xs"
 				centered={true}
 			/>
+		</div>
+		<div class="mt-2 flex flex-row space-x-2">
 			<span class="display">
 				{exampleOptionStateSimple.value}
 			</span>
+		</div>
+	</div>
+
+	<div class="text-xl font-sans mt-6">
+		toggles
+	</div>
+
+	<div class="mt-2 flex flex-col justify-center items-center">
+		<p>The <span class="font-bold">Toggle</span> component is used to toggle a state between true or false:</p>
+		<div class="mt-2 flex flex-row space-x-2">
+			<Toggle/>
 		</div>
 	</div>
 </div>

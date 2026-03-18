@@ -12,6 +12,7 @@
 		size = "md",
 		icon = IconType.BarsThree,
 		label = "Options",
+		labeledButton = false,
 		optionState,
 		onOptionStateChanged = () => {},
 		options = [new OptionConfig("-none-")],
@@ -26,7 +27,7 @@
 </script>
 
 <div>
-	<Dialog {id} {label} {size} {icon}>
+	<Dialog {id} {label} {labeledButton} {size} {icon}>
 		{#if centered}
 		<div class="flex flex-col items-center space-y-1 mt-2">
 			{#each options as option}

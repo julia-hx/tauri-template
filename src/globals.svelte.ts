@@ -57,6 +57,7 @@ export enum IconType {
 	ExclamationTriangle,
 	CogEight,
 	Wrench,
+	WrenchScrewdriver,
 	AdjustmentsHorizontal,
 	AdjustmentsVertical,
 	Microphone,
@@ -67,7 +68,10 @@ export enum IconType {
 	Star,
 	Trash,
 	Fire,
-	Window
+	Window,
+	CommandLine,
+	FaceFrown,
+	FaceSmile,
 }
 
 export enum AccentColor {
